@@ -1,26 +1,28 @@
+// Wait for the deviceready event before using any of Cordova's device APIs.
+// See https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready
 document.addEventListener('deviceready', onDeviceReady, false);
 
 var formDiv = document.getElementById("form");
 
 var username = document.getElementById("username");
 var password = document.getElementById("password");
-var err = document.getElementById("err");
+var errorMessage = document.getElementById("errorMessage");
 var button = document.getElementById("loginButton");
 
 function loginProcess() {
     if (username.value == "" || password.value == "") {
-        err.textContent = "Something's wrong. Please check the fields and try again.";
-        err.style.visibility = "visible";
+        errorMessage.textContent = "Something's wrong. Please check the fields and try again.";
+        errorMessage.style.visibility = "visible";
     } else if (localStorage.getItem(username.value) == null) {
-        err.textContent = "There's no account with this username registered.";
-        err.style.visibility = "visible";
+        errorMessage.textContent = "There's no account with this username registered.";
+        errorMessage.style.visibility = "visible";
     } else {
-        err.style.visibility = "hidden";
+        errorMessage.style.visibility = "hidden";
         if (checkUser()) {
             alert("Logged in successfully");
         } else {
-            err.textContent = "Password's wrong.";
-            err.style.visibility = "visible";
+            errorMessage.textContent = "Password's wrong.";
+            errorMessage.style.visibility = "visible";
         }
     }
 }
@@ -44,4 +46,6 @@ function onDeviceReady() {
             button.click();
         }
     }
+    
+
 }
