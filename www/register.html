@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+    
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; font-src fonts.gstatic.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&display=swap" rel="stylesheet">  
+        <link rel="stylesheet" href="css/index.css">
+
+        <title>Apache Cordova | Sign Up</title>
+    </head>
+    <body>
+        <div class="app">
+            <canvas id="canvas" class="canvas"></canvas>
+            <div class="form" id="form">
+                <h1>APACHE CORDOVA</h1>
+                <h2>Create a new account:</h2>
+                <input class="items" type="text" id="firstName" placeholder="First Name">
+                <input class="items" type="text" id="lastName" placeholder="Last Name">
+                <input class="items" type="text" id="email" placeholder="Email">
+                <input class="items" type="text" id="username" placeholder="Username">
+                <input class="items" type="password" id="password" placeholder="Password">
+                <input class="items" type="password" id="confirmpassword" placeholder="Confirm password">
+                <p class="errorMessage" id="errorMessage">Passwords doesn't match</p>
+                <button class="button" id="registerButton">Sign Up</button>
+                <p>You already have an account? <a href="./index.html">Log in</a></p>
+            </div>
+                
+        </div>
+        <script src="cordova.js"></script>
+        <script src="js/crypto-js.js"></script>
+        <script src="js/register.js"></script>
+        <script src="js/particles.js"></script>
+    </body>
+</html>
